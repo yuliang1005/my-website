@@ -1,5 +1,5 @@
 import { Button, Steps,Layout } from 'antd'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PersonalInformation from './PersonalInformation/PersonalInformation';
 import Introduction from './Introduction/Introduction';
 import Experience from './Experience/Experience'
@@ -27,6 +27,10 @@ export default function Resume() {
             title: 'Experience'
         }
     ]
+
+    useEffect(()=>{
+        document.title = "Resume"
+    },[])
 
     const onChange = (value) => {
         setState(value)
